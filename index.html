@@ -12,13 +12,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name=description
           content="Author: Thomas PERROT, alias Iroh, personal website. Fullstack developer at Dataiku and hacker">
+    <link rel="stylesheet" href="static/css/fonts.min.css">
     <title>Iroh</title>
     <style>
         body {
-            margin: 10px 10%;
             background-color: #0f0f0f;
-            font-family: "system-ui";
+            background: repeating-linear-gradient(to bottom,#040404,#040404 4px,#000000 4px,#000000 8px);
+        }
+        .main {
+            margin: 10px 10%;
+            font-family: Unifont;
             color: lightgrey;
+            font-size: 18px;
         }
         #name {
             display: flex;
@@ -35,9 +40,112 @@
             margin-bottom: 10px;
         }
         @media only screen and (min-width: 800px){
-            body {
+            .main {
                 margin-left: 30%;
                 margin-right: 30%;
+            }
+        }
+        main:before {
+            content: ' ';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18,16,16,0) 50%,rgba(0,0,0,.25) 50%),linear-gradient(90deg,rgba(255,0,0,.06),rgba(0,255,0,.02),rgba(0,0,255,.06));
+            background-size: 100% 2px,3px 100%;
+            opacity: 0;
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker .15s infinite
+        }
+
+        .scanline {
+            width: 99.5%;
+            height: 200px;
+            z-index: 8;
+            background: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(255,255,255,.4) 10%,rgba(0,0,0,.1) 100%);
+            opacity: .1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 8s linear infinite
+        }
+
+        @keyframes scanline {
+            0% {
+                bottom: 100%
+            }
+            80% {
+                bottom: 100%
+            }
+            100% {
+                bottom: 0
+            }
+        }
+        @keyframes flicker {
+            0% {
+                opacity: .53806
+            }
+            5% {
+                opacity: .84916
+            }
+            10% {
+                opacity: .08249
+            }
+            15% {
+                opacity: .61822
+            }
+            20% {
+                opacity: .99591
+            }
+            25% {
+                opacity: .89054
+            }
+            30% {
+                opacity: .15208
+            }
+            35% {
+                opacity: .57893
+            }
+            40% {
+                opacity: .84222
+            }
+            45% {
+                opacity: .78638
+            }
+            50% {
+                opacity: .00832
+            }
+            55% {
+                opacity: .8269
+            }
+            60% {
+                opacity: .79342
+            }
+            65% {
+                opacity: .93253
+            }
+            70% {
+                opacity: .01163
+            }
+            75% {
+                opacity: .00864
+            }
+            80% {
+                opacity: .45555
+            }
+            85% {
+                opacity: .28332
+            }
+            90% {
+                opacity: .75255
+            }
+            95% {
+                opacity: .5475
+            }
+            100% {
+                opacity: .04413
             }
         }
 
@@ -45,43 +153,48 @@
     </style>
 </head>
 <body>
-<img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/banner_greek.svg" width="100%"
-     alt="banner_greek">
+<div class="scanline"></div>
+<div class="main">
+    <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/banner_greek.svg" width="100%"
+         alt="banner_greek">
 
-<div id="name">
-    <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/laurel-left.svg" width="30px"
-         alt="laurel-left">
-    <h1>Iroh</h1>
-    <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/laurel-right.svg" width="30px"
-         alt="laurel-right">
+    <div id="name">
+        <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/laurel-left.svg" width="30px"
+             alt="laurel-left">
+        <h1>Iroh</h1>
+        <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/laurel-right.svg" width="30px"
+             alt="laurel-right">
+    </div>
+
+    <main role="main">
+        <p>I am a French Software Engineer.</p>
+        <p>I spend my free time doing hacking, skiing, and mountain biking.</p>
+        <p>I made all designs using Inkscape.</p>
+    </main>
+
+    <div id="links">
+        <a href="https://cv.iroh.fr">
+            <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-linkedin.svg"
+                 width="150px" alt="linked-button">
+        </a>
+        <a href="https://root-me.iroh.fr">
+            <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-root-me.svg"
+                 width="150px" alt="root-me-button">
+        </a>
+        <a href="https://github.iroh.fr">
+            <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-github.svg"
+                 width="150px" alt="github-button">
+        </a>
+        <a href="mailto:me@iroh.fr">
+            <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-email.svg"
+                 width="150px" alt="email-button">
+        </a>
+    </div>
+
+    <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/banner_shield.jpg" width="100%"
+         id="banner" alt="banner_shield">
+    <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/banner_greek.svg" width="100%"
+         alt="banner greek">
 </div>
-
-<p>I am a French Software Engineer.</p>
-<p>I spend my free time doing hacking, skiing, and mountain biking.</p>
-<p>I made all designs using Inkscape.</p>
-
-<div id="links">
-    <a href="https://cv.iroh.fr">
-        <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-linkedin.svg"
-             width="150px" alt="linked-button">
-    </a>
-    <a href="https://root-me.iroh.fr">
-        <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-root-me.svg"
-             width="150px" alt="root-me-button">
-    </a>
-    <a href="https://github.iroh.fr">
-        <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-github.svg"
-             width="150px" alt="github-button">
-    </a>
-    <a href="mailto:me@iroh.fr">
-        <img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/button-email.svg"
-             width="150px" alt="email-button">
-    </a>
-</div>
-
-<img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/banner_shield.jpg" width="100%"
-     id="banner" alt="banner_shield">
-<img src="https://raw.githubusercontent.com/thomasperrot/thomasperrot/main/assets/banner_greek.svg" width="100%"
-     alt="banner greek">
 </body>
 </html>
